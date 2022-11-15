@@ -1,8 +1,12 @@
 import React from 'react'
+import FoodMenu from './components/Basics/FoodMenu'
+
 
 const App = () => {
   return (
-    <div>App</div>
+    <>
+      <FoodMenu></FoodMenu>
+    </>
   )
 }
 
