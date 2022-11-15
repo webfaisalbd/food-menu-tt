@@ -1,22 +1,16 @@
-import React from 'react'
-import "./style.css"
+import React, { useState } from 'react'
+import "./style.css";
+import Menu from './MenuApi'
+import MenuCard from './MenuCard';
 
 const FoodMenu = () => {
 
-  const myStyle = {
-    color : "blue"
-  }
+  const [menuData, setMenuData] = useState(Menu);
+ 
 
   return (
     <>
-      <div className="card-container">
-        <div className="card">
-          <div className="card-body">
-            <span className="card-number card-circle subtle">1</span>
-            <span className='card-author subtle' style={myStyle}>Breakfast</span>
-          </div>
-        </div>
-      </div>
+      <MenuCard menuData={menuData} />
     </>
   )
 }
