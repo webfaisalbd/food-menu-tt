@@ -7,12 +7,13 @@ import Navbar from './Navbar';
 const uniqueList = [...new Set(Menu.map((curEle) => {
   return curEle.category;
 })),"All"]
-// console.log(uniqueList);
+console.log(uniqueList);
 
 const FoodMenu = () => {
 
   const [menuData, setMenuData] = useState(Menu);
-  const [menuList, setMenuList] = useState(uniqueList);
+  const [displayData, setDisplayData] = useState(Menu);
+  // const [menuList, setMenuList] = useState(uniqueList);
 
   const filterItem = (category) => {
 
@@ -25,15 +26,15 @@ const FoodMenu = () => {
       return curEle.category === category;
     })
 
-    setMenuData(updateList);
+    setDisplayData(updateList);
   }
 
 
   return (
     <>
-      <Navbar filterItem={filterItem} menuList={menuList} />
+      <Navbar filterItem={filterItem} menuList={uniqueList} />
 
-      <MenuCard menuData={menuData} />
+      <MenuCard menuData={displayData} />
     </>
   )
 }
